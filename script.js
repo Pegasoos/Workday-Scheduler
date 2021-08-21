@@ -1,15 +1,14 @@
-
 var saveButton = $("i");
 
 var currentDate = moment().format("dddd, MMMM Do YYYY");
 //loop to create moments, pass ids as a parameter, change classes using isBefore,isSame,isAfter, compare with currentHour?
 $("#currentDay").text(currentDate);
-//moment formatted to fit id formatting
+//moment of time page loaded stored for comparison with time blocks
  let currentHour = moment().utc().format()
 
- let hourBlocks = $("textarea")
+ let hourBlocks = $(".col-md-10")
  console.log($(hourBlocks))
-//check moment doc for correct moment construction, use ISO or RFC if possible
+//loop checks if each time block is before, after, or the same as the current time stored in the currentHour moment()
  for(i = 0; i<$(hourBlocks).length;i++){
      let blockTime = moment().hours(9 + i).utc().format()
 
@@ -38,6 +37,3 @@ saveButton.on("click", saveTask);
      blockNum = $(this).attr("id")
      $(this).val(localStorage.getItem("task" + blockNum))
  }) 
-
- 
-
