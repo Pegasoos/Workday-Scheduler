@@ -11,12 +11,11 @@ $("#currentDay").text(currentDate);
 //loop checks if each time block is before, after, or the same as the current time stored in the currentHour moment()
  for(i = 0; i<$(hourBlocks).length;i++){
      let blockTime = moment().hours(9 + i).utc().format()
-
      if(moment(blockTime).isSame(moment(currentHour))){
-         $(hourBlocks[i]).addClass(".present")
+         $(hourBlocks[i]).addClass("present")
      }
      else if(moment(blockTime).isAfter(moment(currentHour))){
-        $(hourBlocks[i]).addClass(".future")
+        $(hourBlocks[i]).addClass("future")
      }
      else{
         $(hourBlocks[i]).addClass("past")
