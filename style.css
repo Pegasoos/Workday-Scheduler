@@ -5,6 +5,7 @@ body {
 }
 
 textarea{
+  height: 100%;
   width: 90%;
   background: transparent;
   border: none;
